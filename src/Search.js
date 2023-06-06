@@ -75,19 +75,19 @@ export default function Search() {
           <div className="col-4 temp-box">
             <div className="current-temp-number">{Math.round(temperature)}</div>
             <span className="current-temp">
-              <a href="#">F</a> /<a href="#">C</a>
+              <a href="/">F</a> /<a href="/">C</a>
             </span>
           </div>
           <div className="col-4 properties-box">
             <div className="current-props">
               <div>
-                Wind: <a href="#"> {Math.round(wind)} mph</a>
+                Wind: <a href="/"> {Math.round(wind)} mph</a>
               </div>
               <div>
-                Humidity: <a href="#">{humidity}%</a>
+                Humidity: <a href="/">{humidity}%</a>
               </div>
               <div>
-                Visibility: <a href="#">{description}</a>
+                Visibility: <a href="/">{description}</a>
               </div>
             </div>
           </div>
