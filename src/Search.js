@@ -36,29 +36,64 @@ export default function Search() {
   let form = (
     <form onSubmit={handleSubmit}>
       <input
+        className="city-search"
         type="search"
-        placeholder="Enter a city..."
+        placeholder="Type City Name"
+        autoFocus="on"
         onChange={updateCity}
       />
-      <input type="submit" value="Search" />
+      <input
+        className="btn btn-success search-button"
+        type="submit"
+        value="Search"
+      />
+      <input
+        className="btn btn-secondary current-button"
+        type="submit"
+        value="Current"
+      />
     </form>
   );
 
   if (temperature) {
     return (
-      <div className="Weather">
+      <div className="Search">
         {form}
         <br />
-        <h2>
+        <h2 className="city-output">
           {city}, {country}
         </h2>
-        <ul>
-          <li>Temp: {Math.round(temperature)} deg F</li>
-          <li>Description: {description}</li>
-          <li>Humidity: {humidity} %</li>
-          <li>Wind: {Math.round(wind)} mph</li>
-          <img src={icon} alt="Weather icon" />
-        </ul>
+        <h3 className="current-time">4:40pm</h3>
+        <div className="row">
+          <div className="col-4">
+            <img
+              src={icon}
+              alt="Weather icon"
+              className="current-weather-icon"
+            />
+          </div>
+          <div className="col-4 temp-box">
+            <div className="current-temp-number">{Math.round(temperature)}</div>
+            <span className="current-temp">
+              <a href="#">F</a> /<a href="#">C</a>
+            </span>
+          </div>
+          <div className="col-4 properties-box">
+            <div className="current-props">
+              <div>
+                Wind: <a href="#"> {Math.round(wind)} mph</a>
+              </div>
+              <div>
+                Humidity: <a href="#">{humidity}%</a>
+              </div>
+              <div>
+                Visibility: <a href="#">{description}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div className="forecast-form"></div>
       </div>
     );
   } else {
