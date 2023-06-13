@@ -18,7 +18,11 @@ function App() {
       </div>
       <div className="github-link">
         Coded by{" "}
-        <a href="https://www.kellmcallister.com" target="_blank">
+        <a
+          href="https://www.kellmcallister.com"
+          target="_blank"
+          rel="noreferrer"
+        >
           Kelly McAllister
         </a>{" "}
         - check out my projects on
