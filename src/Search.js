@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Search.css";
 import axios from "axios";
 
 export default function Search() {
@@ -12,9 +13,9 @@ export default function Search() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    let apiKey = "b3967db1b6cb07823c5b7912b9ec0e6c";
+    const apiKey = "f66bf4t97048d4a637491a80237ao350";
     let units = "imperial";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
 
     axios.get(apiUrl).then(displayWeather);
   }
@@ -23,13 +24,13 @@ export default function Search() {
   }
 
   function displayWeather(response) {
-    setTemperature(response.data.main.temp);
-    setCountry(response.data.sys.country);
-    setDescription(response.data.weather[0].main);
-    setHumidity(response.data.main.humidity);
+    setTemperature(response.data.temperature.current);
+    setCountry(response.data.country);
+    setDescription(response.data.condition.description);
+    setHumidity(response.data.temperature.humidity);
     setWind(response.data.wind.speed);
     setIcon(
-      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
     );
   }
 
@@ -61,7 +62,8 @@ export default function Search() {
         {form}
         <br />
         <h2 className="city-output">
-          {city}, {country}
+          {city}, <br />
+          {country}
         </h2>
         <h3 className="current-time">4:40pm</h3>
         <div className="row">
