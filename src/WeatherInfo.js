@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import Temperature from "./Temperature";
 
 export default function WeatherInfo(props) {
   return (
@@ -13,17 +14,12 @@ export default function WeatherInfo(props) {
         <div className="col-4">
           <img
             src={props.data.icon}
-            alt="Weather icon"
+            alt={props.data.description}
             className="current-weather-icon"
           />
         </div>
         <div className="col-4 temp-box">
-          <div className="current-temp-number">
-            {Math.round(props.data.temperature)}
-          </div>
-          <span className="current-temp">
-            <a href="/">F</a> /<a href="/">C</a>
-          </span>
+          <Temperature imperial={props.data.temperature} />
         </div>
         <div className="col-4 properties-box">
           <div className="current-props">
@@ -40,8 +36,10 @@ export default function WeatherInfo(props) {
         </div>
         <div>
           <h3 className="current-time">
-            Your local date and time is:
-            <FormattedDate date={props.data.date} />
+            <span>
+              Your local day and time is:{" "}
+              <FormattedDate date={props.data.date} />
+            </span>
           </h3>
         </div>
       </div>

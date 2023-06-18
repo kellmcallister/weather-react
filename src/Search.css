@@ -34,8 +34,10 @@ header {
   margin: 0 5px;
 }
 .degree {
-  display: block;
-  margin: 0 auto;
+  font-size: 18px;
+  position: relative;
+  line-height: 1;
+  top: -16px;
 }
 .current-temp {
   font-size: 20px;
