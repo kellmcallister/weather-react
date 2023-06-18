@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Search.css";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Search(props) {
   const [searchData, setSearchData] = useState({ ready: false });
@@ -60,45 +60,8 @@ export default function Search(props) {
             value="Current"
           />
         </form>
-        <h2 className="city-output">
-          {searchData.city},<br />
-          {searchData.country}
-        </h2>
 
-        <div className="row">
-          <div className="col-4">
-            <img
-              src={searchData.icon}
-              alt="Weather icon"
-              className="current-weather-icon"
-            />
-          </div>
-          <div className="col-4 temp-box">
-            <div className="current-temp-number">
-              {Math.round(searchData.temperature)}
-            </div>
-            <span className="current-temp">
-              <a href="/">F</a> /<a href="/">C</a>
-            </span>
-          </div>
-          <div className="col-4 properties-box">
-            <div className="current-props">
-              <div>
-                Wind: <a href="/"> {Math.round(searchData.wind)} mph</a>
-              </div>
-              <div>
-                Humidity: <a href="/">{searchData.humidity}%</a>
-              </div>
-              <div>
-                Visibility: <a href="/">{searchData.description}</a>
-              </div>
-            </div>
-          </div>{" "}
-          <h3 className="current-time">
-            Your local date and time is:{" "}
-            <FormattedDate date={searchData.date} />
-          </h3>
-        </div>
+        <WeatherInfo data={searchData} />
         <hr />
         <div className="forecast-form"></div>
       </div>
