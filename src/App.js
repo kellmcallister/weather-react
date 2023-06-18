@@ -1,4 +1,6 @@
 import Search from "./Search";
+import React from "react";
+import "./App.css";
 
 function App() {
   return (
@@ -10,7 +12,7 @@ function App() {
         <div className="card">
           <div className="card-body">
             <div className="search-row">
-              <Search />
+              <Search defaultCity="Austin" />
             </div>
           </div>
         </div>
