@@ -1,0 +1,50 @@
+h2 {
+  text-align: center;
+  color: #157347;
+  text-transform: capitalize;
+}
+.city-output {
+  margin: 20px auto 0px;
+}
+.current-weather-icon {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+}
+.current-weather-icon:hover {
+  scale: 120%;
+  transition: all 200ms ease-in;
+}
+.current-time {
+  text-align: center;
+  font-size: 16px;
+}
+.temp-box {
+  margin: 36px auto;
+  text-align: center;
+}
+.current-temp-number {
+  font-size: 42px;
+  display: inline;
+  margin: 0 5px;
+}
+.degree {
+  font-size: 18px;
+  position: relative;
+  line-height: 1;
+  top: -16px;
+}
+.current-temp {
+  font-size: 20px;
+  position: relative;
+  top: -15px;
+}
+.current-temp:hover {
+  cursor: pointer;
+}
+.properties-box {
+  display: block;
+  margin: 44px auto;
+  text-align: center;
+  font-size: 14px;
+}

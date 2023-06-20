@@ -60,10 +60,7 @@ export default function Search(props) {
             value="Current"
           />
         </form>
-
         <WeatherInfo data={searchData} />
-        <hr />
-        <div className="forecast-form"></div>
       </div>
     );
   } else {
