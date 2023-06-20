@@ -24,7 +24,12 @@ export default function Temperature(props) {
           <span className="degree">
             {" "}
             <strong>°F </strong>|{" "}
-            <a href="/" onClick={showMetric}>
+            <a
+              href="/"
+              title="Celsius Temperature"
+              rel="noopener noreferrer"
+              onClick={showMetric}
+            >
               °C
             </a>{" "}
           </span>
@@ -37,7 +42,12 @@ export default function Temperature(props) {
         <span className="current-temp-number">
           {Math.round(handleConvert())}{" "}
           <span className="degree">
-            <a href="/" onClick={showImperial}>
+            <a
+              href="/"
+              title="Fahrenheit Temperature"
+              rel="noopener noreferrer"
+              onClick={showImperial}
+            >
               °F{" "}
             </a>
             | <strong>°C </strong>

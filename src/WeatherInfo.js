@@ -1,13 +1,11 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import Temperature from "./Temperature";
-import Forecast from "./Forecast";
 import "./WeatherInfo.css";
 
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
-      {" "}
       <h2 className="city-output">
         {props.data.city},<br />
         {props.data.country}
@@ -17,6 +15,7 @@ export default function WeatherInfo(props) {
           <img
             src={props.data.icon}
             alt={props.data.description}
+            description={props.data.description}
             className="current-weather-icon"
           />
         </div>
@@ -26,13 +25,28 @@ export default function WeatherInfo(props) {
         <div className="col-4 properties-box">
           <div className="current-props">
             <div>
-              Wind: <a href="/"> {Math.round(props.data.wind)} mph</a>
+              Wind:{" "}
+              <a href="/" title="Wind Speed" rel="noopener noreferrer">
+                {" "}
+                {Math.round(props.data.wind)} mph
+              </a>
             </div>
             <div>
-              Humidity: <a href="/">{props.data.humidity}%</a>
+              Humidity:{" "}
+              <a href="/" title="Humidity" rel="noopener noreferrer">
+                {props.data.humidity}%
+              </a>
             </div>
             <div>
-              Visibility: <a href="/">{props.data.description}</a>
+              Visibility:{" "}
+              <a
+                href="/"
+                title="Visibility"
+                rel="noopener noreferrer"
+                className="description"
+              >
+                {props.data.description}
+              </a>
             </div>
           </div>
         </div>
@@ -45,8 +59,6 @@ export default function WeatherInfo(props) {
           </h3>
         </div>
       </div>{" "}
-      <hr />
-      <Forecast city={props.data.city} />
     </div>
   );
 }

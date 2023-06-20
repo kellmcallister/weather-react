@@ -15,6 +15,9 @@ h2 {
   scale: 120%;
   transition: all 200ms ease-in;
 }
+.description {
+  text-transform: capitalize;
+}
 .current-time {
   text-align: center;
   font-size: 16px;

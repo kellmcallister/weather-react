@@ -22,7 +22,7 @@ function App() {
         <a
           href="https://www.kellmcallister.com"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           Kelly McAllister
         </a>{" "}
@@ -30,7 +30,7 @@ function App() {
         <a
           href="https://github.com/kellmcallister"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           {" "}
           GitHub!
